@@ -46,6 +46,6 @@ jobs:
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: My_WebView_App-v1.0.0.apk
+          name: My_Web_App-v1.0.0.apk
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
