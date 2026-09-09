@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var webView: WebView
     private var swipeRefreshLayout: SwipeRefreshLayout? = null
     private var progressBar: ProgressBar? = null
-    private val TARGET_URL = "https://sayantika28.blogspot.com"
+    private val TARGET_URL = "https://subs24.blogspot.com"
 
     
     // Interstitial Ads Settings

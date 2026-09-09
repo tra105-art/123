@@ -18,11 +18,11 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="My Web App"
+        android:label="kajal"
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.MyWebApp">
+        android:theme="@style/Theme.kajal">
 
         <!-- AdMob App ID -->
         <meta-data
@@ -34,7 +34,7 @@
             android:name=".SplashActivity"
             android:exported="true"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.MyWebApp.NoActionBar">
+            android:theme="@style/Theme.kajal.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -54,9 +54,9 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="sayantika28.blogspot.com" />
-                <data android:scheme="http" android:host="sayantika28.blogspot.com" />
-                <data android:scheme="app" android:host="mywebapp" />
+                <data android:scheme="https" android:host="subs24.blogspot.com" />
+                <data android:scheme="http" android:host="subs24.blogspot.com" />
+                <data android:scheme="app" android:host="kajal" />
             </intent-filter>
         </activity>
 

@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "My_Web_App"
+rootProject.name = "kajal"
 include(":app")
