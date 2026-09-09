@@ -25,6 +25,15 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Configure Gradle Properties
+        run: |
+          mkdir -p ~/.gradle
+          echo "org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8" > ~/.gradle/gradle.properties
+          touch gradle.properties
+          grep -q "android.useAndroidX" gradle.properties || echo "android.useAndroidX=true" >> gradle.properties
+          grep -q "android.enableJetifier" gradle.properties || echo "android.enableJetifier=true" >> gradle.properties
+          grep -q "org.gradle.jvmargs" gradle.properties || echo "org.gradle.jvmargs=-Xmx2048m" >> gradle.properties
+
       - name: Setup Gradle 8.5
         uses: gradle/actions/setup-gradle@v3
         with:
@@ -32,16 +41,11 @@ jobs:
 
       - name: Build Debug APK
         run: |
-          if [ -f "gradlew" ]; then
-            chmod +x gradlew
-            ./gradlew assembleDebug --stacktrace --no-daemon || gradle assembleDebug --stacktrace --no-daemon
-          else
-            gradle assembleDebug --stacktrace --no-daemon
-          fi
+          gradle assembleDebug --stacktrace --no-daemon
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: My_Web_App-v1.0.0.apk
+          name: My_WebView_App-v1.0.0.apk
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
